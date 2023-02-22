@@ -170,8 +170,30 @@ const signin = (req, res) => {
 	  });
 };
 
+const updateProfile = (req, res) => {
+	const email = req.body.email
+	const update = { fname: req.body.fname, 
+					 lname: req.body.lname,
+					 companyName: req.body.companyName,
+					 companyDescription: req.body.companyDescription,
+				 };
+
+	console.log(update)
+	console.log(email)
+
+	User.findOneAndUpdate({email: email}, update, (err, user) =>{
+		if (err) {
+			console.log(err);
+			res.status(500).send(err);
+		  } else {
+			res.status(200).send(user);
+		  }
+	})
+}
+
 app.post("/signup", checkDuplicateUsernameOrEmail, signup)
 app.post("/signin", signin);
+app.post("/updateProfile", updateProfile)
 
 
 

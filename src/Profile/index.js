@@ -8,6 +8,7 @@ import { IdentificationIcon,  CheckIcon,
 import MainBody from '../Components/Body'
 import Referral from './Referral'
 import Feedback from './Feedback'
+import EditProfile from './EditProfile';
 import {Helmet} from "react-helmet";
 import EnvIcon from './EnvIcon'
 import { withRouter } from 'react-router-dom'
@@ -125,6 +126,9 @@ class Body extends Component {
 					<Route exact path="/my-profile/feedback">
 						<Feedback />
 					</Route>
+					<Route exact path="/my-profile/editprofile">
+						<EditProfile />
+					</Route>
 					<Route>
 
 						
@@ -147,7 +151,7 @@ class Body extends Component {
 								Icon={ChatAltIcon}
 								title={"Edit Profile"} 
 								desc={"Edit your profile"} 
-								to={"/my-profile/feedback"}
+								to={"/my-profile/editprofile"}
 								fromColor="gray-400"
 								toColor="gray-400"
 							/>

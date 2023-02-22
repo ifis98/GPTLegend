@@ -37,6 +37,7 @@ if(!window.store){
 @observer
 class App extends Component {
   render() {
+    console.log(window.store.profile._id)
     return (
     <ThemeProvider theme={colors}>
         <Provider store={window.store}>
@@ -67,6 +68,7 @@ class App extends Component {
                       <Route path="/signup/failed" component={Profile} />
                       <Route path="/signup/success" component={LoginSuccess} />
                       <Route path="/signup/success" component={LoginSuccess} />
+
                     
                   </Switch>
                 </> : <> {/* Logged in but no plan */}

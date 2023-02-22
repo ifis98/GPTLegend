@@ -10,14 +10,15 @@ import Button from '../Components/Button'
 import Output from '../Components/Output'
 import Logo from '../Logo'
 import Countdown from 'react-countdown';
-
+import appStore from '../store';
 import { observable, makeObservable } from 'mobx'
 import { observer, inject,  } from 'mobx-react'
+import "./css/Form.css"
 
 
 @inject('store')
 @observer
-class Feedback extends Component {
+class EditProfile extends Component {
 
 	countdown
 	@observable output = ""
@@ -52,100 +53,112 @@ class Feedback extends Component {
     constructor(props) {
         super(props)
         makeObservable(this)
-		this.init();
+		console.log(this.props.store.profile)
+		this.state = {
+			firstName: this.props.store.profile.fname,
+			lastName: this.props.store.profile.lname,
+			companyName: this.props.store.profile.companyName,
+			companyDescription: this.props.store.profile.companyDescription,
+		  };
+	  
+		  this.handleSubmit = this.handleSubmit.bind(this);
+		  this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
+		  this.handleLastNameChange = this.handleLastNameChange.bind(this);
+		  this.handleCompanyNameChange = this.handleCompanyNameChange.bind(this);
+		  this.handleCompanyDescriptionChange = this.handleCompanyDescriptionChange.bind(
+			this
+		  );
     }
-
-	init = async () => {
-		this.refreshFeedback()
-	}
-
-	refreshFeedback = async () => {
-		let response = await this.props.store.api.post('/user/feedback/view')
-		this.feedbacks = [...response.data]
-	}
 	
-	handleFeedback = async () => {
-		try {
-			await this.props.store.api.post('/user/feedback', {  feedback: this.props.store.feedback, })
-			this.refreshFeedback()
-			this.output = "Thank you for your feedback!"
-			this.props.store.feedback = ``
-		} catch (err) {
-			console.log(err)
-			this.output = "There seems to have been an error, please try submitting again"
-		}
-	}
 
-	onClick = async () => {
-		this.loading = true
-		await this.handleFeedback()
-		this.date = Date.now() + 10000
-		this.props.store.feedback = ""
-		this.countdown.start()
-		this.loading = false
-	}
-	onChange = e => {
-		this.props.store.feedback = e.target.value
-	}
+	async handleSubmit(e) {
+		e.preventDefault();
+		console.log("submit")
+		console.log(this.props.store.profile.email)
+		await this.props.store.api.post('/auth/updateProfile', {
+			email: this.props.store.profile.email,
+			fname: this.state.firstName,
+			lname: this.state.lastName,
+			companyName: this.state.companyName,
+			companyDescription: this.state.companyDescription
+		})
+		window.store = new appStore()
+	  }
+	
+	  handleFirstNameChange(e) {
+		this.setState({ firstName: e.target.value });
+	  }
+	
+	  handleLastNameChange(e) {
+		this.setState({ lastName: e.target.value });
+	  }
+	
+	  handleCompanyNameChange(e) {
+		this.setState({ companyName: e.target.value });
+	  }
+	
+	  handleCompanyDescriptionChange(e) {
+		this.setState({ companyDescription: e.target.value });
+	  }
+
 	
 	render() {
+		const {
+			firstName,
+			lastName,
+			companyName,
+			companyDescription,
+		  } = this.state;
 		return (
-				<>
-					<Grid>
-						<Col span="6">
-							<EntryText
-								title="Feedback"
-								desc="Provide some feedback about your experience"
-								prompt={this.props.store.feedback}
-								onChange={this.onChange}
-							/>
-							<Countdown 
-								ref={countdown => this.countdown = countdown} 
-								date={this.date} 
-								renderer={props => 
-									<Button 
-										title={props.total ? `Timeout ${props.total/1000} secs` : "Submit Feedback"}
-										disabled={props.total}
-										Icon={props.total ? ClockIcon : PencilIcon} 
-										onClick={this.onClick} 
-									/>} 
-							/>
-						</Col>
-						<Col span="6">
-							<Output 
-                                    title={`EnhanceAI.ai`}
-                                    desc={`Feedback Response`}
-
-                                    Icon={Logo}
-                                    fromColor={`yellow-300`}
-									toColor={`yellow-400`}
-                                    
-                                    loading={this.loading}
-                                    output={this.output}
-                                    
-                            />
-							{this.feedbacks && this.feedbacks.map((feedback,index) => <Output 
-									key={feedback._id}
-                                    title={`Feedback Received`}
-                                    desc={`${feedback.created}`}
-
-                                    Icon={PencilIcon}
-                                    fromColor={feedback.response ? `green-400` : `gray-300`}
-									toColor={feedback.response ? `green-600` : `gray-400`}
-
-									
-                                    output={feedback.feedback}
-                                    outputs={feedback.response ? [feedback.response] : null}
-                                    
-                            />)}
-					</Col>
-				</Grid>
-			</>
-		)
+			<form onSubmit={this.handleSubmit} style={{width: "40%"}}>
+			  <div className="form-row">
+				<div className="form-group" style={{ marginRight: "50px" }}>
+				  <label htmlFor="firstName">First Name:</label>
+				  <input
+					type="text"
+					id="firstName"
+					value={firstName}
+					onChange={this.handleFirstNameChange}
+					style={{ width: "100%", height: "40px" }}
+				  />
+				</div>
+				<div className="form-group">
+				  <label htmlFor="lastName">Last Name:</label>
+				  <input
+					type="text"
+					id="lastName"
+					value={lastName}
+					onChange={this.handleLastNameChange}
+					style={{ width: "100%", height: "40px" }}
+				  />
+				</div>
+			  </div>
+			  <div className="form-group">
+				<label htmlFor="companyName">Company Name:</label>
+				<input
+				  type="text"
+				  id="companyName"
+				  value={companyName}
+				  onChange={this.handleCompanyNameChange}
+				  style={{ width: "100%", height: "40px" }}
+				/>
+			  </div>
+			  <div className="form-group">
+				<label htmlFor="companyDescription">Company Description:</label>
+				<textarea
+				  id="companyDescription"
+				  value={companyDescription}
+				  onChange={this.handleCompanyDescriptionChange}
+				  style={{ width: "100%", height: "200px" }}
+				></textarea>
+			  </div>
+			  <Button type="submit" onClick={this.handleSubmit}>Update Profile</Button>
+			</form>
+		  );
 	}
 }
 
   
 
 
-export default Feedback
+export default EditProfile
