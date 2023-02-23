@@ -65,10 +65,10 @@ const checkDuplicateUsernameOrEmail = async (req, res, next) => {
 
 const signup = async (req, res) => {
 
-	const customer = await stripe.customers.create({
-		email: `${req.body.email}`,
-		name: `${req.body.fname} ${req.body.lname}`
-	});
+	// const customer = await stripe.customers.create({
+	// 	email: `${req.body.email}`,
+	// 	name: `${req.body.fname} ${req.body.lname}`
+	// });
 
 	let referrerObj = {}
 	console.log(`req.body.referral`,req.body.referral)
@@ -90,7 +90,7 @@ const signup = async (req, res) => {
 	  email: req.body.email,
 	  fname: req.body.fname,
 	  lname: req.body.lname,
-	  customerId: customer.id,
+	//   customerId: customer.id,
 	  password: bcrypt.hashSync(req.body.password, 8),
 	  ...referrerObj
 	});
@@ -170,8 +170,30 @@ const signin = (req, res) => {
 	  });
 };
 
+const updateProfile = (req, res) => {
+	const email = req.body.email
+	const update = { fname: req.body.fname, 
+					 lname: req.body.lname,
+					 companyName: req.body.companyName,
+					 companyDescription: req.body.companyDescription,
+				 };
+
+	console.log(update)
+	console.log(email)
+
+	User.findOneAndUpdate({email: email}, update, (err, user) =>{
+		if (err) {
+			console.log(err);
+			res.status(500).send(err);
+		  } else {
+			res.status(200).send(user);
+		  }
+	})
+}
+
 app.post("/signup", checkDuplicateUsernameOrEmail, signup)
 app.post("/signin", signin);
+app.post("/updateProfile", updateProfile)
 
 
 
