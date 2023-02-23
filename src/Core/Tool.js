@@ -267,10 +267,16 @@ class Tool extends Component {
                 postObj[prompt.attr] = prompt.value
             })
 
+            postObj["company"] = this.props.store.profile.companyName
+            postObj["companyDescription"] = this.props.store.profile.companyDescription
+
+
             postObj.currentPrompt = this.prompts[this.currentPrompt].title
             if(this.prompts[this.currentPrompt].n){
                 postObj.n = this.prompts[this.currentPrompt].n
             }
+
+            console.log(postObj)
 
             let response = await this.props.store.api
                 .post(this.tool.api, postObj)

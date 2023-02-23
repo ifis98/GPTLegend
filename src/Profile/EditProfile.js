@@ -10,7 +10,7 @@ import Button from '../Components/Button'
 import Output from '../Components/Output'
 import Logo from '../Logo'
 import Countdown from 'react-countdown';
-import appStore from '../store';
+import AppStore from '../store';
 import { observable, makeObservable } from 'mobx'
 import { observer, inject,  } from 'mobx-react'
 import "./css/Form.css"
@@ -82,7 +82,7 @@ class EditProfile extends Component {
 			companyName: this.state.companyName,
 			companyDescription: this.state.companyDescription
 		})
-		window.store = new appStore()
+		window.store = new AppStore()
 	  }
 	
 	  handleFirstNameChange(e) {
