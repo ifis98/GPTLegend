@@ -20,7 +20,7 @@ const paid = async (eventType,data) => {
 	}
 	const { object } = data
 	console.log(eventType)
-	console.log(object.amount_paid)
+	console.log(object)
 
 	let credits = 0
 
