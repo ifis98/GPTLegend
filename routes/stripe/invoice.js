@@ -13,11 +13,14 @@ const invoice = async (eventType,data) => {
 
 const paid = async (eventType,data) => {
 
+	console.log("paid event hit")
+
 	if (!eventType.includes("invoice.paid")) {
 		return // not a subscription event
 	}
 	const { object } = data
 	console.log(eventType)
+	console.log(object.amount_paid)
 
 	let credits = 0
 

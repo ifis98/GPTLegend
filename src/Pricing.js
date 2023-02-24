@@ -133,7 +133,7 @@ const Entry = ({ fromColor, toColor, baseURL, api }) => <div className="flex rel
 
 <div className="p-8 flex-1">
   <div href="#" className={`text-${fromColor ? fromColor : "green-500"} block text-lg text-2xl leading-tight font-medium mb-2`}>Entry</div>
-  <div className="text-6xl text-black font-bold">$30<span className="text-lg text-gray-400">/per month</span></div>
+  <div className="text-6xl text-black font-bold">$10<span className="text-lg text-gray-400">/per month</span></div>
   <p className="mt-4 text-lg">
 	  Start today to get access to our powerful AI-powered features.
   </p>
@@ -188,7 +188,7 @@ const Premium = ({ fromColor, toColor, baseURL, api }) => <div className="flex r
 
 <div className="p-8 flex-1">
   <div href="#" className={`text-${fromColor ? fromColor : "green-500"} block text-lg text-2xl leading-tight font-medium mb-2`}>Pro</div>
-  <div className="text-6xl text-black font-bold">$90<span className="text-lg text-gray-400">/per month</span></div>
+  <div className="text-6xl text-black font-bold">$20<span className="text-lg text-gray-400">/per month</span></div>
   <p className="mt-4 text-lg">
 	  Start today to get access to our powerful AI-powered features.
   </p>
