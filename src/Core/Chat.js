@@ -53,6 +53,7 @@ class Tool extends Component {
         super(props)
         makeObservable(this)
         this.tool = this.props.store.getToolByUrl(this.props.location.pathname)
+        this.tool = true
         if(!this.tool){
 			window.location.href = '/';
 		} else {
