@@ -10,7 +10,7 @@ app.post('/ideas/problems', async (req, res, next) => {
   
 	let prompt = `Give me a list 10 problems in the world that I can solve with a business with this information about me:\n`
 
-	let inputRaw = `AGE:${age}\nHOBBIES:${hobbiesy}\nPROBLEMS:` // here is where people enter stuff
+	let inputRaw = `AGE:${age}\nHOBBIES:${hobbies}\nPROBLEMS:` // here is where people enter stuff
 	prompt += inputRaw
 
 	const gptResponse = await openai.complete({

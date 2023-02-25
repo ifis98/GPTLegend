@@ -31,7 +31,7 @@ const obj = {
 		// n: 1,
 		prompts: [{ 
 				title: "Age", 
-				attr: "content",  
+				attr: "hobbies",  
 				value: "", 
 				placeholder: "How old are you?", 
 				label: "",
@@ -45,7 +45,7 @@ const obj = {
 			},
 			{ 
 				title: "What are your hobbies?", 
-				attr: "content",  
+				attr: "age",  
 				value: "", 
 				placeholder: "Gaming, Sports, etc.", 
 				label: "",
