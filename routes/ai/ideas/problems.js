@@ -8,7 +8,7 @@ app.post('/ideas/problems', async (req, res, next) => {
 	try {
 		let { age, hobbies} = req.body
   
-	let prompt = `Give me a list 10 problems in the world that I can solve with a business with this information about me:\n`
+	let prompt = `Give me a list 10 problems in the world that I can solve with a business with this information about me. Organize them by industry:\n`
 
 	let inputRaw = `AGE:${age}\nHOBBIES:${hobbies}\nPROBLEMS:` // here is where people enter stuff
 	prompt += inputRaw
