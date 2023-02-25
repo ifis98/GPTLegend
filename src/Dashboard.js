@@ -41,6 +41,10 @@ class Body extends Component {
 		return this.permissions.filter(tool => tool.category === 'Programming')
 	}
 
+	@computed get ideas() {
+		return this.permissions.filter(tool => tool.category === 'Ideas')
+	}
+
 	render() {
 	return (
 
@@ -52,10 +56,10 @@ class Body extends Component {
 
 		
 
-			{this.programming.length ? <>
-				<Title title="Programming" />
+			{this.ideas.length ? <>
+				<Title title="Business Ideas" />
 				<Grid>
-					{this.programming.map((tool, index) => 
+					{this.ideas.map((tool, index) => 
 						<Tool 
 							key={index}
 							group={tool.category}

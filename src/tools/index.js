@@ -5,17 +5,10 @@ import intro from './intro';
 import helloworld from './helloworld';
 import example from './example';
 import salesfunnel from './salesfunnel'
+import problems from './problems'
 
 const TOOLS = [
-
-	codeInterpret,
-	intro,
-	jobad,
-	summarize,
-	helloworld,
-	example,
-	salesfunnel
-
+	problems,
 ]
 
 export default TOOLS
