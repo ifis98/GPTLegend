@@ -46,6 +46,7 @@ const updated = async (eventType,data) => {
 		return // not a subscription event
 	}
 	const { object } = data
+	console.log('UPDATED')
 	console.log(`object.status`,object.plan.status)
 	console.log(`object.id`,object.id)
 	console.log(`object.customer`,object.customer)

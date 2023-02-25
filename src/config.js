@@ -1,5 +1,5 @@
 const dev = {
-	baseURL: "http://localhost:3080/api/",
+	baseURL: "http://13.58.242.248:3080/api/",
 	landingPageUrl: "http://localhost:3080",
 	stripe: {
 		free: "price_1JcQD6HIZYvvnKladKayEvOZ",

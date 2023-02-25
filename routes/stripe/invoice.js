@@ -13,20 +13,25 @@ const invoice = async (eventType,data) => {
 
 const paid = async (eventType,data) => {
 
+	console.log("paid event hit")
+
 	if (!eventType.includes("invoice.paid")) {
 		return // not a subscription event
 	}
 	const { object } = data
 	console.log(eventType)
+	//console.log(object)
 
 	let credits = 0
 
 	// 500 credits for $30
-	if(object.amount_paid > 2900){
-		credits += (object.amount_paid / 12)
+	if(object.amount_paid > 900){
+		//credits += (object.amount_paid / 12)
+		credits += 1000
 	}
-	if(object.amount_paid > 8900){
-		credits += (object.amount_paid / 12)
+	if(object.amount_paid > 1900){
+		//credits += (object.amount_paid / 12)
+		credits += 2000
 	}
 
 	let user = await User.findOne({
