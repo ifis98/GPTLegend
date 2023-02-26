@@ -31,7 +31,7 @@ app.post('/social/facebook', async (req, res, next) => {
 		`${topic ? `TOPIC: ${topic}\n` : ``}` + 
 		`${desc ? `POST DESCRIPTION: ${desc}\n` : ``}` + 
 		`${tone ? `TONE: ${tone}\n` : ``}` +
-		`TWEET:` 
+		`POST:` 
 
 
 		prompt += inputRaw
