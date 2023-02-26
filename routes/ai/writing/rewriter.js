@@ -10,9 +10,9 @@ let app = express.Router()
 // output characters: 200
 
 // Personal Tools
-app.post('/writing/email', async (req, res, next) => {
+app.post('/writing/rewriter', async (req, res, next) => {
 	try {
-		let { title, audience, desc, keywords } = req.body
+		let { text, type, ins } = req.body
 
 		if(desc){
 			if (desc.length > 600) {
@@ -20,16 +20,17 @@ app.post('/writing/email', async (req, res, next) => {
 			}
 		}
 
-		let prompt = `Write a professional email based on the metadata provided:\n"""\n` 
+		let prompt = `Rewrite the text provided based on the metadata provided:\n"""\n` 
 
 		
 
 		
 
 		let inputRaw =
-		`${audience ? `RECIPIENT: ${audience}\n` : ``}` + 
-		`${desc ? `DESCRIPTION: ${desc}\n` : ``}` + 
-		`EMAIL:` 
+		`${type ? `TYPE OF TEXT: ${audience}\n` : ``}` + 
+		`${text ? `TEXT TO REWRITE: ${text}\n` : ``}` +
+		`${text ? `REWRITING INSTRUCTIONS: ${ins}\n` : ``}` +  
+		`REWRITTEN TEXT:` 
 
 
 		prompt += inputRaw

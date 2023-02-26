@@ -21,10 +21,15 @@ app.use('/', require('./jobad'));
 app.use('/', require('./helloworld'));
 app.use('/', require('./example'));
 app.use('/', require('./salesfunnel'));
+
 app.use('/', require('./ideas/problems'));
+
 app.use('/', require('./writing/email'));
+app.use('/', require('./writing/rewriter'));
+
 app.use('/', require('./personal/problemsolver'));
 app.use('/', require('./personal/taskscheduler'));
+
 app.use('/', require('./social/tweet'));
 app.use('/', require('./social/facebook'));
 
