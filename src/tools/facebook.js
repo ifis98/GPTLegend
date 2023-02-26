@@ -5,8 +5,8 @@ import {
 
 const obj = {
 
-	title: "Tweet Writer",
-	desc: "Write a twitter post",
+	title: "Facebook Post Writer",
+	desc: "Write a Facebook post",
 	category: "Social",
 	Icon: MenuAlt2Icon,
 	// tags: [],
@@ -15,8 +15,8 @@ const obj = {
 	fromColor: "yellow-400",
 	toColor: "yellow-600",
 
-	to: "/ai/social/tweet",
-	api: "/ai/social/tweet",
+	to: "/ai/social/facebook",
+	api: "/ai/social/facebook",
 
 	output: {
 		title: "Email",
@@ -26,8 +26,8 @@ const obj = {
 	},
 
 	prompts: [{
-		title:"Write a Tweet",
-		desc: "Enter details about the tweet you want to write",
+		title:"Write a Facebook post",
+		desc: "Enter details about the post you want to write",
 		// n: 1,
 		prompts: [
 			{ 
@@ -35,7 +35,7 @@ const obj = {
 				attr: "topic",  
 				value: "", 
 				placeholder: "Global Warming", 
-				label: "What is this tweet about?",
+				label: "What is this post about?",
 				// type: "textarea",
 				maxLength: 50,
 				// max: 100,
@@ -49,7 +49,7 @@ const obj = {
 				attr: "tone",  
 				value: "", 
 				placeholder: "Urgent", 
-				label: "What is the tone of your tweet?",
+				label: "What is the tone of your post?",
 				type: "textarea",
 				maxLength: 600,
 				// max: 100,
@@ -63,7 +63,7 @@ const obj = {
 				attr: "desc",  
 				value: "", 
 				placeholder: "An email about a purchase order for...", 
-				label: "Describe what you want in your tweet",
+				label: "Describe what you want in your post",
 				type: "textarea",
 				maxLength: 600,
 				// max: 100,

@@ -27,7 +27,7 @@ const obj = {
 
 	prompts: [{
 		title:"Email Writer",
-		desc: "Wnter details about the email you want to write.",
+		desc: "Enter details about the email you want to write.",
 		// n: 1,
 		prompts: [
 			{ 

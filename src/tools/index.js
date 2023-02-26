@@ -10,6 +10,7 @@ import email from './email'
 import problemsolver from './problemsolver'
 import taskscheduler from './taskscheduler'
 import tweet from './tweet'
+import facebook from './facebook'
 
 const TOOLS = [
 	problems,
@@ -18,7 +19,8 @@ const TOOLS = [
 	problemsolver,
 	summarize,
 	taskscheduler,
-	tweet
+	tweet,
+	facebook
 	
 ]
 
