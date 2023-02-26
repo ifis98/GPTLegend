@@ -16,7 +16,7 @@ app.post('/writing/onelinevalue', async (req, res, next) => {
 
 
 
-		let prompt = `Write a one-liner that simply explains the value proposition of my product or feature to a potential buyer:\n"""\n` 
+		let prompt = `Write a one-liner made by an expert marketer nthat simply explains the value proposition of my product or feature to a potential buyer:\n"""\n` 
 
 		
 
