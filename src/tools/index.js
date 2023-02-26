@@ -13,6 +13,7 @@ import tweet from './tweet'
 import facebook from './facebook'
 import rewriter from './rewriter'
 import featurecreator from './featurecreator'
+import onelinevalue from './onelinevalue'
 
 const TOOLS = [
 	problems,
@@ -27,6 +28,7 @@ const TOOLS = [
 	intro,
 	rewriter,
 	featurecreator,
+	onelinevalue,
 
 	
 ]
