@@ -14,12 +14,6 @@ app.post('/writing/rewriter', async (req, res, next) => {
 	try {
 		let { text, type, ins } = req.body
 
-		if(desc){
-			if (desc.length > 600) {
-				desc = desc.substring(desc.length - 600)
-			}
-		}
-
 		let prompt = `Rewrite the text provided based on the metadata provided:\n"""\n` 
 
 		
@@ -29,7 +23,7 @@ app.post('/writing/rewriter', async (req, res, next) => {
 		let inputRaw =
 		`${type ? `TYPE OF TEXT: ${audience}\n` : ``}` + 
 		`${text ? `TEXT TO REWRITE: ${text}\n` : ``}` +
-		`${text ? `REWRITING INSTRUCTIONS: ${ins}\n` : ``}` +  
+		`${tins ? `REWRITING INSTRUCTIONS: ${ins}\n` : ``}` +  
 		`REWRITTEN TEXT:` 
 
 
