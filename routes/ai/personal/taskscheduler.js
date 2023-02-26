@@ -20,7 +20,7 @@ app.post('/personal/taskscheduler', async (req, res, next) => {
 			}
 		}
 
-		let prompt = `Provide steps to solve a problem based on the description provied:\n"""\n` 
+		let prompt = `Create a daily schedule based on the provided description of tasks to accomplish:\n"""\n` 
 
 		
 
@@ -29,7 +29,7 @@ app.post('/personal/taskscheduler', async (req, res, next) => {
 		let inputRaw = 
 		`${desc ? `DESCRIPTION: ${desc}\n` : ``}` + 
 		`CURRENT TIME: ${time}`
-		`STEPS:` 
+		`SCHEDULE:` 
 
 
 		prompt += inputRaw
@@ -47,7 +47,7 @@ app.post('/personal/taskscheduler', async (req, res, next) => {
 			n: 1,
 			user: req.user._id,
 			stream: false,
-			stop: [`"""`, "STEPS:" ],
+			stop: [`"""`, "SCHEDULE:" ],
 		});
 
 		let output = `${gptResponse.data.choices[0].text}`
