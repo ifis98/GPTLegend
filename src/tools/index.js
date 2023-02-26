@@ -14,6 +14,7 @@ import facebook from './facebook'
 import rewriter from './rewriter'
 import featurecreator from './featurecreator'
 import onelinevalue from './onelinevalue'
+import sentiment from './sentiment'
 
 const TOOLS = [
 	problems,
@@ -29,6 +30,7 @@ const TOOLS = [
 	rewriter,
 	featurecreator,
 	onelinevalue,
+	sentiment,
 
 	
 ]

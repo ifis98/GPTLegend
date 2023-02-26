@@ -29,6 +29,7 @@ app.use('/', require('./ideas/problems'));
 app.use('/', require('./writing/email'));
 app.use('/', require('./writing/rewriter'));
 app.use('/', require('./writing/onelinevalue'));
+app.use('/', require('./writing/sentiment'));
 
 app.use('/', require('./personal/problemsolver'));
 app.use('/', require('./personal/taskscheduler'));
