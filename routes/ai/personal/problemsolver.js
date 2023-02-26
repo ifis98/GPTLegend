@@ -20,14 +20,14 @@ app.post('/personal/problemsolver', async (req, res, next) => {
 			}
 		}
 
-		let prompt = `Create a daily schedule based on what I need to get done today:\n"""\n` 
+		let prompt = `Provide steps to help me solve my problem based on the description provided:\n"""\n` 
 
 		
 
 		
 
 		let inputRaw = 
-		`${desc ? `WHAT I NEED TO ACCOMPLISH: ${desc}\n` : ``}` + 
+		`${desc ? `PROBLEM DESCRIPTION: ${desc}\n` : ``}` + 
 		`STEPS:` 
 
 

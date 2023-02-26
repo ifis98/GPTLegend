@@ -34,7 +34,7 @@ const obj = {
 				title: "Description", 
 				attr: "desc",  
 				value: "", 
-				placeholder: "Drop off kids, go to the bank (2pm - 3pm), etc.", 
+				placeholder: "Drop off kids, go to the bank at 3 pm for an hour, etc.", 
 				label: "Tasks you need to accomplish",
 				type: "textarea",
 				maxLength: 600,
