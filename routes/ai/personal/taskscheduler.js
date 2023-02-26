@@ -23,7 +23,7 @@ app.post('/personal/taskscheduler', async (req, res, next) => {
 			}
 		}
 
-		let prompt = `Create a daily schedule for the rest of the day based on the provided description of tasks to accomplish:\n"""\n` 
+		let prompt = `Create a daily schedule for the rest of the day until I sleep based on the provided description of tasks to accomplish:\n"""\n` 
 
 		
 
