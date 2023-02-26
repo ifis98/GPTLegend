@@ -59,7 +59,7 @@ app.post('/writing/intro', async (req, res, next) => {
 
 
 		const gptResponse = await openai.complete({
-			engine: 'davinci',
+			engine: 'text-davinci-003',
 			prompt,
 			maxTokens: 100,
 			temperature: 0.8,

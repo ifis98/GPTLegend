@@ -20,7 +20,9 @@ const TOOLS = [
 	summarize,
 	taskscheduler,
 	tweet,
-	facebook
+	facebook,
+	codeInterpret,
+	intro
 	
 ]
 

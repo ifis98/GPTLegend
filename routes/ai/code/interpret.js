@@ -22,7 +22,7 @@ app.post('/code/interpret', async (req, res, next) => {
 			prompt += inputRaw
 
 			const gptResponse = await openai.complete({
-				engine: 'davinci-codex',
+				engine: 'code-davinci-002',
 				prompt,
 				maxTokens: 100,
 				temperature: 0.5,
