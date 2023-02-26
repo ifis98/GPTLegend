@@ -11,6 +11,7 @@ import problemsolver from './problemsolver'
 import taskscheduler from './taskscheduler'
 import tweet from './tweet'
 import facebook from './facebook'
+import rewriter from './rewriter'
 
 const TOOLS = [
 	problems,
@@ -22,7 +23,8 @@ const TOOLS = [
 	tweet,
 	facebook,
 	codeInterpret,
-	intro
+	intro,
+	rewriter,
 	
 ]
 

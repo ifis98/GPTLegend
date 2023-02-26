@@ -39,7 +39,7 @@ app.post('/writing/rewriter', async (req, res, next) => {
 		const gptResponse = await openai.complete({
 			engine: 'text-davinci-003',
 			prompt,
-			maxTokens: 500,
+			maxTokens: 1000,
 			temperature: 0.8,
 			frequencyPenalty: 0.2,
 			presencePenalty: 0,

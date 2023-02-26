@@ -51,7 +51,7 @@ const obj = {
 				placeholder: "An email about a purchase order for...", 
 				label: "Enter what you want to rewrite",
 				type: "textarea",
-				maxLength: 600,
+				maxLength: 2000,
 				// max: 100,
 				// min: 100,
 				// required: true,
