@@ -23,7 +23,7 @@ app.post('/code/interpret', async (req, res, next) => {
 			const gptResponse = await openai.complete({
 				engine: 'text-davinci-003',
 				prompt,
-				maxTokens: 100,
+				maxTokens: 700,
 				temperature: 0.5,
 				topP: 1,
 				frequencyPenalty: 0,
