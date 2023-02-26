@@ -20,7 +20,7 @@ app.post('/writing/email', async (req, res, next) => {
 			}
 		}
 
-		let prompt = `Write an email based on the metadata provided:\n"""\n` 
+		let prompt = `Write a professional email email based on the metadata provided:\n"""\n` 
 
 		
 
@@ -36,7 +36,7 @@ app.post('/writing/email', async (req, res, next) => {
 
 
 		const gptResponse = await openai.complete({
-			engine: 'davinci',
+			engine: 'text-davinci-003',
 			prompt,
 			maxTokens: 100,
 			temperature: 0.8,

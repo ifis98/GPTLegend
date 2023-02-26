@@ -10,7 +10,7 @@ let app = express.Router()
 // output characters: 200
 
 // Personal Tools
-app.post('/writing/problemsolver', async (req, res, next) => {
+app.post('/personal/problemsolver', async (req, res, next) => {
 	try {
 		let { desc,} = req.body
 
@@ -35,7 +35,7 @@ app.post('/writing/problemsolver', async (req, res, next) => {
 
 
 		const gptResponse = await openai.complete({
-			engine: 'davinci',
+			engine: 'text-davinci-003',
 			prompt,
 			maxTokens: 100,
 			temperature: 0.8,

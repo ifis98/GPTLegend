@@ -15,8 +15,8 @@ const obj = {
 	fromColor: "yellow-400",
 	toColor: "yellow-600",
 
-	to: "/ai/personal/email",
-	api: "/ai/personal/email",
+	to: "/ai/personal/problemsolver",
+	api: "/ai/personal/problemsolver",
 
 	output: {
 		title: "Email",

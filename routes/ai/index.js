@@ -23,6 +23,7 @@ app.use('/', require('./example'));
 app.use('/', require('./salesfunnel'));
 app.use('/', require('./ideas/problems'));
 app.use('/', require('./writing/email'));
+app.use('/', require('./personal/problemsolver'));
 
 
 
