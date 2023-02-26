@@ -7,17 +7,16 @@ let app = express.Router()
 app.post('/code/interpret', async (req, res, next) => {
 
 	try {
-			let { content, } = req.body
+			let { language, content, } = req.body
 
-			let prompt = `### Interpret code blocks and explain what they do in simple. helpful terms\n\n` +
-			`# Code\n` + 
-			`function HelloWorld(text){ echo text || "Hello World"; }\n` + 
-			`# Explanation of what the code does\n` + 
-			"1. It defines a new function called `HelloWorld` that takes a single argument called `text`\n2. The body of the function prints out the value of `text` if it is defined, or `Hello World` if it is not defined\n\n" 
+			let prompt = `### Interpret code blocks and explain what they do in simple. helpful terms with the provided language in list format:\n\n` 
+
 
 			let inputRaw = `# Code\n` + 
-			`${content}\n` +
-			`# Explanation of what the code does\n1.`
+			`${content}\n#\n` +
+			`LANGUAGE: ${language}\n` +
+
+			`EXPLANATION OF WHAT THE CODE DOES:\n1.`
 
 			prompt += inputRaw
 
