@@ -28,8 +28,9 @@ app.post('/social/tweet', async (req, res, next) => {
 
 		let inputRaw =
 		`${audience ? `AUDIENCE: ${audience}\n` : ``}` + 
+		`${topic ? `TOPIC: ${topic}\n` : ``}` + 
 		`${desc ? `TWEET DESCRIPTION: ${desc}\n` : ``}` + 
-		`${desc ? `TONE: ${tone}\n` : ``}` +
+		`${tone ? `TONE: ${tone}\n` : ``}` +
 		`TWEET:` 
 
 

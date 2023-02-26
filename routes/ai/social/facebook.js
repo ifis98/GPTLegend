@@ -28,8 +28,9 @@ app.post('/social/facebook', async (req, res, next) => {
 
 		let inputRaw =
 		`${audience ? `AUDIENCE: ${audience}\n` : ``}` + 
+		`${topic ? `TOPIC: ${topic}\n` : ``}` + 
 		`${desc ? `POST DESCRIPTION: ${desc}\n` : ``}` + 
-		`${desc ? `TONE: ${tone}\n` : ``}` +
+		`${tone ? `TONE: ${tone}\n` : ``}` +
 		`TWEET:` 
 
 
