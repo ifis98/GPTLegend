@@ -129,7 +129,7 @@ class Body extends Component {
 			</> : null}
 
 			{this.social.length ? <>
-				<Title title="Online" />
+				<Title title="Social Media" />
 				<Grid>
 					{this.social.map((tool, index) => 
 						<Tool 

@@ -5,9 +5,9 @@ import {
 
 const obj = {
 
-	title: "Step 1: Find a Problem",
+	title: "Find a Problem",
 	desc: "Fill out this questionnaire to find problems that you're positioned to solve!",
-	category: "Ideas",
+	category: "Business",
 	Icon: ViewListIcon,
 	// tags: [],
 	permissions: ['user'],

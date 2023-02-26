@@ -25,6 +25,7 @@ app.use('/', require('./ideas/problems'));
 app.use('/', require('./writing/email'));
 app.use('/', require('./personal/problemsolver'));
 app.use('/', require('./personal/taskscheduler'));
+app.use('/', require('./social/tweet'));
 
 
 
