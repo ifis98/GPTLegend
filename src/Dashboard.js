@@ -148,7 +148,7 @@ class Body extends Component {
 			{this.programming.length ? <>
 				<Title title="Programming" />
 				<Grid>
-					{this.ideas.map((tool, index) => 
+					{this.programming.map((tool, index) => 
 						<Tool 
 							key={index}
 							group={tool.category}
