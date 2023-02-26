@@ -5,8 +5,8 @@ import {
 
 const obj = {
 
-	title: "Problem Solving Assistant",
-	desc: "Receive steps to help you solve a problem",
+	title: "Daily Schedule",
+	desc: "Create a schedule for today based on the task that you want to accomplish",
 	category: "Personal",
 	Icon: MenuAlt2Icon,
 	// tags: [],
@@ -15,8 +15,8 @@ const obj = {
 	fromColor: "yellow-400",
 	toColor: "yellow-600",
 
-	to: "/ai/personal/problemsolver",
-	api: "/ai/personal/problemsolver",
+	to: "/ai/personal/taskscheduler",
+	api: "/ai/personal/taskscheduler",
 
 	output: {
 		title: "Email",
@@ -26,16 +26,16 @@ const obj = {
 	},
 
 	prompts: [{
-		title:"Problem Description",
-		desc: "Provide a short description about the problem you're facing",
+		title:"What you want to accomplish",
+		desc: "Provide a short description about the tasks that you want to accomplish today",
 		// n: 1,
 		prompts: [
 			{ 
 				title: "Description", 
 				attr: "desc",  
 				value: "", 
-				placeholder: "I have been falling behind in work lately...", 
-				label: "A short description about your problem",
+				placeholder: "Drop off kids, go to the bank (2pm - 3pm), etc.", 
+				label: "Tasks you need to accomplish",
 				type: "textarea",
 				maxLength: 600,
 				// max: 100,

@@ -269,6 +269,7 @@ class Tool extends Component {
 
             postObj["company"] = this.props.store.profile.companyName
             postObj["companyDescription"] = this.props.store.profile.companyDescription
+            postObj["time"] = (new Date()).toISOString
 
 
             postObj.currentPrompt = this.prompts[this.currentPrompt].title

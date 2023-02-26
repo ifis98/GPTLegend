@@ -10,9 +10,9 @@ let app = express.Router()
 // output characters: 200
 
 // Personal Tools
-app.post('/personal/problemsolver', async (req, res, next) => {
+app.post('/personal/taskscheduler', async (req, res, next) => {
 	try {
-		let { desc,} = req.body
+		let { desc, time} = req.body
 
 		if(desc){
 			if (desc.length > 600) {
@@ -20,14 +20,15 @@ app.post('/personal/problemsolver', async (req, res, next) => {
 			}
 		}
 
-		let prompt = `Create a daily schedule based on what I need to get done today:\n"""\n` 
+		let prompt = `Provide steps to solve a problem based on the description provied:\n"""\n` 
 
 		
 
 		
 
 		let inputRaw = 
-		`${desc ? `WHAT I NEED TO ACCOMPLISH: ${desc}\n` : ``}` + 
+		`${desc ? `DESCRIPTION: ${desc}\n` : ``}` + 
+		`CURRENT TIME: ${time}`
 		`STEPS:` 
 
 
