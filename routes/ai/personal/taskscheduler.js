@@ -14,6 +14,8 @@ app.post('/personal/taskscheduler', async (req, res, next) => {
 	try {
 		let { desc, time} = req.body
 
+		console.log(req.body)
+
 		if(desc){
 			if (desc.length > 600) {
 				desc = desc.substring(desc.length - 600)
