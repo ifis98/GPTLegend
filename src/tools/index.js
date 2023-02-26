@@ -7,11 +7,14 @@ import example from './example';
 import salesfunnel from './salesfunnel'
 import problems from './problems'
 import email from './email'
+import problemsolver from './problemsolver'
 
 const TOOLS = [
 	problems,
 	jobad,
-	email
+	email,
+	problemsolver,
+	summarize
 	
 ]
 
