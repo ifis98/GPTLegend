@@ -12,6 +12,7 @@ import taskscheduler from './taskscheduler'
 import tweet from './tweet'
 import facebook from './facebook'
 import rewriter from './rewriter'
+import featurecreator from './featurecreator'
 
 const TOOLS = [
 	problems,
@@ -25,6 +26,8 @@ const TOOLS = [
 	codeInterpret,
 	intro,
 	rewriter,
+	featurecreator,
+
 	
 ]
 

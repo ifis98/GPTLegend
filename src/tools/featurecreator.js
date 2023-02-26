@@ -15,8 +15,8 @@ const obj = {
 	fromColor: "gray-500",
 	toColor: "gray-500",
 
-	to: "/ai/ideas/step1",
-	api: "/ai/ideas/problems",
+	to: "/ai/business/features",
+	api: "/ai/business/features",
 
 	output: {
 		title: "Example",
