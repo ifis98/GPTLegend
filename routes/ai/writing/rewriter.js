@@ -21,7 +21,7 @@ app.post('/writing/rewriter', async (req, res, next) => {
 		
 
 		let inputRaw =
-		`${type ? `TYPE OF TEXT: ${audience}\n` : ``}` + 
+		`${type ? `TYPE OF TEXT: ${type}\n` : ``}` + 
 		`${text ? `TEXT TO REWRITE: ${text}\n` : ``}` +
 		`${tins ? `REWRITING INSTRUCTIONS: ${ins}\n` : ``}` +  
 		`REWRITTEN TEXT:` 
