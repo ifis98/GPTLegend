@@ -6,9 +6,13 @@ import helloworld from './helloworld';
 import example from './example';
 import salesfunnel from './salesfunnel'
 import problems from './problems'
+import email from './email'
 
 const TOOLS = [
 	problems,
+	jobad,
+	email
+	
 ]
 
 export default TOOLS
