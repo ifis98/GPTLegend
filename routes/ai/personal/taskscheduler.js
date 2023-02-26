@@ -12,7 +12,7 @@ let app = express.Router()
 // Personal Tools
 app.post('/personal/taskscheduler', async (req, res, next) => {
 	try {
-		let { desc, time} = req.body
+		let {desc, time} = req.body
 
 		console.log(req.body)
 		console.log(time)
@@ -31,7 +31,7 @@ app.post('/personal/taskscheduler', async (req, res, next) => {
 
 		let inputRaw = 
 		`${desc ? `DESCRIPTION: ${desc}\n` : ``}` + 
-		`CURRENT TIME: ${time}`
+		`CURRENT TIME: ${time.toString()}\n`
 		`SCHEDULE:` 
 
 
