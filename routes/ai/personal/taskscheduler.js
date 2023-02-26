@@ -42,7 +42,7 @@ app.post('/personal/taskscheduler', async (req, res, next) => {
 			engine: 'text-davinci-003',
 			prompt,
 			maxTokens: 500,
-			temperature: 0.8,
+			temperature: 0.5,
 			frequencyPenalty: 0.2,
 			presencePenalty: 0,
 			bestOf: 1,
