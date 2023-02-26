@@ -60,7 +60,7 @@ const obj = {
 			},
 			{ 
 				title: "Re-writing instructions", 
-				attr: "text",  
+				attr: "ins",  
 				value: "", 
 				placeholder: "Make this text more friendly and concise", 
 				label: "How do you want to re-write your text?",
