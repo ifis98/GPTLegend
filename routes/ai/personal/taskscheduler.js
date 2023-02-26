@@ -31,7 +31,7 @@ app.post('/personal/taskscheduler', async (req, res, next) => {
 
 		let inputRaw = 
 		`${desc ? `DESCRIPTION: ${desc}\n` : ``}` + 
-		`CURRENT TIME: ${time.toString()}\n`
+		`CURRENT TIME: ${time}\n` +
 		`SCHEDULE:` 
 
 
