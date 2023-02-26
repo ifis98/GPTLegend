@@ -145,6 +145,23 @@ class Body extends Component {
 				</Grid>
 				<Divider />
 			</> : null}
+			{this.programming.length ? <>
+				<Title title="Programming" />
+				<Grid>
+					{this.ideas.map((tool, index) => 
+						<Tool 
+							key={index}
+							group={tool.category}
+							title={tool.title} 
+							to={tool.to} 
+							Icon={tool.Icon} 
+							desc={tool.desc} 
+							fromColor={tool.fromColor} 
+							toColor={tool.toColor} 
+						/>)} 
+				</Grid>
+				<Divider />
+			</> : null}
 
 </MainBody>
 </>)
