@@ -12,7 +12,7 @@ let app = express.Router()
 // Personal Tools
 app.post('/writing/email', async (req, res, next) => {
 	try {
-		let { title, audience, desc, keywords } = req.body
+		let { tone, audience, desc, } = req.body
 
 		if(desc){
 			if (desc.length > 600) {
@@ -20,7 +20,7 @@ app.post('/writing/email', async (req, res, next) => {
 			}
 		}
 
-		let prompt = `Write a professional email based on the metadata provided:\n"""\n` 
+		let prompt = `Write an email based on the metadata provided:\n"""\n` 
 
 		
 
@@ -28,6 +28,7 @@ app.post('/writing/email', async (req, res, next) => {
 
 		let inputRaw =
 		`${audience ? `RECIPIENT: ${audience}\n` : ``}` + 
+		`${tone ? `TONE: ${tone}\n` : ``}` + 
 		`${desc ? `DESCRIPTION: ${desc}\n` : ``}` + 
 		`EMAIL:` 
 
