@@ -46,7 +46,3 @@ https
       "Example app listening on port 3080!"
     );
   });
-
-app.listen(port, () => {
-  console.log(`Example app listening at ${process.env.DOMAIN}:${port}`)
-})
