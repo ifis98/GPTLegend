@@ -38,6 +38,7 @@ class appStore {
 	constructor(){
 		makeObservable(this);
 		this.init()
+		console.log("api: "+this.api)
 		// Check credits every time, and log out people who aren't authenticated
 		this.api.interceptors.response.use((response) => {
 			this.updateCredits(response)
