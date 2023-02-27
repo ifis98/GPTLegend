@@ -3,10 +3,14 @@ import { observable, computed, makeObservable } from 'mobx'
 import { configure } from "mobx"
 import FuzzySet from 'fuzzyset'
 import Filter from 'bad-words'
+import https from 'https'
+
 
 import TOOLS from './tools'
 import config from './config'
 
+
+const httpsAgent = new https.Agent({ rejectUnauthorized: false })
 
 let filterBadWords = new Filter()
 
@@ -14,7 +18,7 @@ let baseURL = config.baseURL
 
 configure({  enforceActions: "never", })
 
-let api = axios.create({ baseURL, });
+let api = axios.create({ baseURL, httpsAgent});
 
 const FuzzySearch = FuzzySet([...TOOLS.map(tool => tool.title)]);
 
