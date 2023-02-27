@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser')
+const fs = require("fs");
 const cors = require('cors')
 
 require('dotenv-flow').config();
