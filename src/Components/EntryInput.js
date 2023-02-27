@@ -75,16 +75,16 @@ class EntryInput extends Component {
 
 				{this.props.prompt.title && <label 
 					htmlFor={this.props.prompt.attr} 
-					className="text-gray-600 font-medium text-md">
+					className="text-gray-200 font-medium text-md">
 						{this.props.prompt.title}
 				</label>} 
 				
 				<div className="relative flex flex-col">
 
-				{this.props.prompt.options ? null : <div className={`text-xs absolute z-30 right-2 select-none pointer-events-none transition-all top bg-white px-2 ${this.isMinLength ? "text-red-500" : "text-gray-400"} ${(!this.isLongEnoughToDrop && this.props.size) ? "" : ""}`}>
+				{this.props.prompt.options ? null : <div className={`text-xs absolute z-30 right-2 select-none pointer-events-none transition-all top bg-black px-2 ${this.isMinLength ? "text-red-500" : "text-gray-400"} ${(!this.isLongEnoughToDrop && this.props.size) ? "" : ""}`}>
 					{this.currentNumberOfCharacters} chars
 				</div>}
-
+title
 				
 				<label htmlFor={this.props.prompt.attr} className="relative transition text-gray-600 focus-within:text-gray-800 block">
 				{Icon ? <Icon className={`
@@ -99,7 +99,7 @@ class EntryInput extends Component {
 						maxLength={this.props.prompt.maxLength || 80}
 						{...this.props.prompt}
 						autoFocus={this.props.index === 0}
-						className={`outline-none focus:outline-none text-${this.props.size || "lg"} bg-white rounded-md px-4 py-2 w-full border  focus:border-gray-400 ${this.props.prompt.error ? "border-red-400" : "border-gray-300"} font-regular mt-2 transition-all ${Icon && `
+						className={`outline-none focus:outline-none text-${this.props.size || "lg"} text-gray-200 bg-black rounded-md px-4 py-2 w-full border  focus:border-gray-400 ${this.props.prompt.error ? "border-red-400" : "border-gray-300"} font-regular mt-2 transition-all ${Icon && `
 						${this.props.size ? "" : "pl-9"}
 						${this.props.size === "sm" && "pl-7"}
 						${this.props.size === "lg" && "pl-12"}
@@ -113,7 +113,7 @@ class EntryInput extends Component {
 						maxLength={this.props.prompt.maxLength || 400}
 						{...this.props.prompt}
 						autoFocus={this.props.index === 0}
-						className={`outline-none focus:outline-none text-${this.props.size || "lg"} bg-white rounded-md px-4 py-2 w-full border  focus:border-gray-400  ${this.props.prompt.error ? "border-red-400" : "border-gray-300"} font-regular mt-2 transition-all ${Icon && `
+						className={`outline-none focus:outline-none text-${this.props.size || "lg"} bg-black rounded-md px-4 py-2 w-full border  focus:border-gray-400  ${this.props.prompt.error ? "border-red-400" : "border-gray-300"} font-regular mt-2 transition-all ${Icon && `
 						${this.props.size ? "" : "pl-7"}
 						${this.props.size === "sm" && "pl-7"}
 						${this.props.size === "lg" && "pl-12"}
@@ -155,7 +155,7 @@ class EntryInput extends Component {
 						name={this.props.prompt.attr} 
 						id={this.props.prompt.attr} 
 						{...this.props.prompt}
-						className={`outline-none focus:outline-none text-${this.props.size || "lg"} bg-white rounded-md ${this.props.size ? "px-2 py-2" : "px-4 py-4"}  min-w-full border border-gray-300 font-regular focus:border-gray-400 ${this.props.prompt.error ? "border-red-400" : "border-gray-300"} font-regular mt-2 `}
+						className={`outline-none focus:outline-none text-${this.props.size || "lg"} bg-black text-gray-200 rounded-md ${this.props.size ? "px-2 py-2" : "px-4 py-4"}  min-w-full border border-gray-300 font-regular focus:border-gray-400 ${this.props.prompt.error ? "border-red-400" : "border-gray-300"} font-regular mt-2 `}
 						onChange={this.onChange}
 					/>}
 
@@ -194,7 +194,7 @@ const Option = ({ index, title, desc, active , onClick, Icon}) => <div  classNam
 </div>
 <div>
 {title}
-<div className="font-normal text-sm">{desc}</div>
+<div className="font-normal text-sm text-gray-500">{desc}</div>
 </div>
 </div>
 

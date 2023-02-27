@@ -329,7 +329,7 @@ class Tool extends Component {
             return(
                 <>
                 <Helmet>
-                    <title>{`${this.tool.title} Tool - OpenAI Template`}</title>
+                    <title>{`${this.tool.title} Tool - Smqrter`}</title>
                 </Helmet>
                 <Header 
                     title={this.tool.title}
@@ -341,10 +341,10 @@ class Tool extends Component {
                     options={[
                         {   title: "Start Using", 
                             Icon: PencilIcon, 
-                            color: this.props.store.profile.credits ? 'green' : 'red',
+                            color: this.props.store.profile.credits ? 'blue' : 'red',
                             onClick: this.onStartUsing 
                         },
-                        { title: "Example", color: 'yellow', Icon: InformationCircleIcon, onClick: this.onExample},
+                        { title: "Example", color: 'pink', Icon: InformationCircleIcon, onClick: this.onExample},
                     ]}
                     currentOption={this.currentOption}
                 />

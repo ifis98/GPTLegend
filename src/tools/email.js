@@ -5,7 +5,7 @@ import {
 
 const obj = {
 
-	title: "Email writer",
+	title: "Email Writer",
 	desc: "Write an email",
 	category: "Content",
 	Icon: MenuAlt2Icon,
@@ -53,8 +53,8 @@ const obj = {
 				type: "textarea",
 				maxLength: 600,
 				// max: 100,
-				// min: 100,
-				// required: true,
+				min: 20,
+				required: true,
 				error: "",
 				example: "An article about why its important to use storybook to document your progress even when working without a javascript framework to help you understand what you are doing.",
 			},

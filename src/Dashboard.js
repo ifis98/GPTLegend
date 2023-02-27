@@ -50,9 +50,9 @@ class Body extends Component {
 
 		<>
 			<Helmet>
-				<title>{`Tools - OpenAI Template`}</title>
+				<title>{`Smqrter`}</title>
 			</Helmet>
-			<MainBody className="px-4 py-4 md:px-28 md:py-8 lg:py-12 ">
+			<MainBody className="px-4 py-4 md:px-28 md:py-8 lg:py-12">
 
 		
 
@@ -68,7 +68,7 @@ class Body extends Component {
 							Icon={tool.Icon} 
 							desc={tool.desc} 
 							fromColor={tool.fromColor} 
-							toColor={tool.toColor} 
+							toColor="white"
 						/>)} 
 				</Grid>
 				<Divider />
@@ -85,8 +85,8 @@ class Body extends Component {
 							to={tool.to} 
 							Icon={tool.Icon} 
 							desc={tool.desc} 
-							fromColor={tool.fromColor} 
-							toColor={tool.toColor} 
+							fromColor="purple-500"
+							toColor="purple-100"
 						/>)} 
 				</Grid>
 				<Divider />
@@ -103,8 +103,8 @@ class Body extends Component {
 							to={tool.to} 
 							Icon={tool.Icon} 
 							desc={tool.desc} 
-							fromColor={tool.fromColor} 
-							toColor={tool.toColor} 
+							fromColor="blue-500"
+							toColor="blue-100"
 						/>)} 
 				</Grid>
 				<Divider />
@@ -121,8 +121,8 @@ class Body extends Component {
 							to={tool.to} 
 							Icon={tool.Icon} 
 							desc={tool.desc} 
-							fromColor={tool.fromColor} 
-							toColor={tool.toColor} 
+							fromColor="pink-500" 
+							toColor="pink-100"
 						/>)} 
 				</Grid>
 				<Divider />
@@ -139,8 +139,8 @@ class Body extends Component {
 							to={tool.to} 
 							Icon={tool.Icon} 
 							desc={tool.desc} 
-							fromColor={tool.fromColor} 
-							toColor={tool.toColor} 
+							fromColor="yellow-500"
+							toColor="yellow-100"
 						/>)} 
 				</Grid>
 				<Divider />
@@ -156,8 +156,8 @@ class Body extends Component {
 							to={tool.to} 
 							Icon={tool.Icon} 
 							desc={tool.desc} 
-							fromColor={tool.fromColor} 
-							toColor={tool.toColor} 
+							fromColor="green-500"
+							toColor="green-100"
 						/>)} 
 				</Grid>
 				<Divider />
@@ -171,7 +171,7 @@ class Body extends Component {
 export const Divider = () => <div className="divide-y-2 divide-dashed divide-gray-300 py-8 md:py-12"> <div></div>
 <div></div></div>
 
-export const Title = ({ title }) => <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-700 mb-4 md:mb-6">
+export const Title = ({ title }) => <h2 className="text-xl sm:text-2xl md:text-3xl text-white mb-4 md:mb-6">
 {title}
 </h2>
 
@@ -179,11 +179,11 @@ export const Grid = ({ children }) => <div className="grid grid-cols-1 gap-8 mt-
 
 export const Tool = ({ Icon, title, desc, to, group, fromColor, toColor }) => <Link to={to || "/"} className="flex relative ">
 	
-	<div className={`bg-white flex-1 rounded-xl transition hover:shadow-md overflow-hidden md:max-w-1lg text-gray-500 cursor-pointer border border-gray-300 md:flex relative transform hover:scale-105  hover:text-black`}>
+	<div className={`bg-black flex-1 rounded-xl transition hover:shadow-md overflow-hidden md:max-w-1lg text-gray-500 cursor-pointer md:flex relative transform hover:scale-105  hover:text-black`}>
   <div className="p-4">
-	<div className={`uppercase tracking-wide text-sm text-${fromColor ? fromColor : "green-500"} font-semibold leading-none`}>{group || "New"}</div>
-	<div href="#" className="block text-lg xl:text-xl 2xl:text-2xl leading-tight font-medium text-black leading-none">{title}</div>
-	<p className="mt-1 pr-1 text-sm ">{desc} </p>
+	<div className={`uppercase mb-2 tracking-wide text-sm text-transparent bg-clip-text bg-gradient-to-r from-${fromColor} to-${toColor} font-semibold leading-none`}>{group || "New"}</div>
+	<div href="#" className="block text-lg xl:text-lg leading-tight font-medium text-white leading-none">{title}</div>
+	<p className=" pr-1 text-sm text-gray-500">{desc} </p>
   </div>
 </div>
 </Link>

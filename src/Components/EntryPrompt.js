@@ -12,7 +12,7 @@ class EntryPrompt extends Component {
 		let hidden = currentPrompt === index ? false : true
 
 		return (
-			<div className={`align-bottom bg-white md:rounded-md text-left overflow-hidden transform transition-all sm:align-middle transition hover:shadow-md shadow-2xl focus:shadow-2xl md:mb-8  ${hidden ? "hidden" : ""}`}>
+			<div className={`align-bottom bg-black md:rounded-md text-left overflow-hidden transform transition-all sm:align-middle transition hover:shadow-md shadow-2xl focus:shadow-2xl md:mb-8  ${hidden ? "hidden" : ""}`}>
 
 				<div className="px-6 py-6">
 
@@ -26,7 +26,7 @@ class EntryPrompt extends Component {
 						</div>
 
 						<div className="mt-0 ml-4 text-left">
-							<div as="h3" className="text-lg leading-6 font-medium text-gray-900">
+							<div as="h3" className="text-lg leading-6 font-medium text-white">
 
 								{this.props.prompt.title || "Entry Text"}
 

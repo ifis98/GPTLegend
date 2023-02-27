@@ -33,7 +33,7 @@ const Bounce = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #10b981;
+    background-color: #EC407A;
     opacity: 0.5;
     position: absolute;
     top: 0;
@@ -46,7 +46,7 @@ const BounceTwo = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #3d84f6;
+    background-color: #86716E;
     opacity: 0.5;
     position: absolute;
     top: 0;
@@ -60,7 +60,7 @@ const BounceThree = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #3d84f6;
+    background-color: #2196F3;
     opacity: 0.5;
     position: absolute;
     top: 0;

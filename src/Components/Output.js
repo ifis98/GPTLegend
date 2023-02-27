@@ -12,8 +12,7 @@ import CodeEditor from "@uiw/react-textarea-code-editor";
 
 export const Output = inject('store')(observer(({ store,title, desc, Icon, output, code, language, outputs, loading, children, fromColor, toColor, outputsColor, OutputsIcon}) => {
 	return (<div className="relative mb-12"><div className={`absolute inset-0 bg-gradient-to-r from-${fromColor ? fromColor : "green-400"} to-${toColor ? toColor : "blue-500"} shadow-lg transform md:skew-y-0 md:-rotate-3 md:rounded-3xl -mt-1 md:mt-0`}></div>
-	<div className=" align-bottom bg-white md:rounded-3xl text-left  shadow-xl transform transition-all sm:align-middle transition shadow-md hover:shadow-2xl focus:shadow-2xl">
-
+	<div className=" align-bottom bg-black md:rounded-3xl text-left  shadow-xl transform transition-all sm:align-middle transition shadow-md hover:shadow-2xl focus:shadow-2xl">
 	<div className=" px-6 py-6">
 	<div className="sm:flex sm:items-start">
 	{loading ? <>
@@ -25,7 +24,7 @@ export const Output = inject('store')(observer(({ store,title, desc, Icon, outpu
 			</>}
 
 			<div className="text-center sm:mt-0 sm:ml-4 sm:text-left">
-				<div as="h3" className="text-lg leading-6 font-medium text-gray-900">
+				<div as="h3" className="text-lg leading-6 font-medium text-white">
 				{title}
 				</div>
 					<p className="text-sm text-gray-500">
@@ -35,7 +34,7 @@ export const Output = inject('store')(observer(({ store,title, desc, Icon, outpu
 		
 		</div>
 		{code ? null : output ? <div
-			className="whitespace-pre-wrap min-w-full text-gray-800 h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+			className="whitespace-pre-wrap min-w-full text-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
 				{output ? 
 					<Typist
 						stdTypingDelay={0}

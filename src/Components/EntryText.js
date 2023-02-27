@@ -10,7 +10,7 @@ class EntryText extends Component {
       //  getColor, 
        error, hidden, disabled, placeholder, children} = this.props
     return (
-      <div className={`align-bottom bg-white md:rounded-md text-left overflow-hidden shadow-xl transform transition-all sm:align-middle transition shadow-md hover:shadow-2xl focus:shadow-2xl mb-4 md:mb-8 ${hidden ? "hidden" : ""}`}>
+      <div className={`align-bottom bg-black md:rounded-md text-left overflow-hidden shadow-xl transform transition-all sm:align-middle transition shadow-md hover:shadow-2xl focus:shadow-2xl mb-4 md:mb-8 ${hidden ? "hidden" : ""}`}>
               <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <div className="flex items-center">
               <div className={`flex-shrink-0 inline-flex items-center justify-center md:h-12 md:w-12 h-6 w-6 rounded-full bg-${error ? "red" : prompt ? "green" : "gray"}-300 sm:mx-0 sm:h-10 sm:w-10 ${error ? "bg-red-300" : active ? "bg-green-300" : "bg-gray-300"}`}>
@@ -22,7 +22,7 @@ class EntryText extends Component {
                     }
                 </div>
                 <div className=" mt-0 ml-4 text-left">
-                    <div as="h3" className="text-lg leading-6 font-medium text-gray-900">
+                    <div as="h3" className="text-lg leading-6 font-medium text-white">
                     	{title || "Entry Text"}
                     </div>
                       <p className="text-sm text-gray-500">
@@ -40,7 +40,7 @@ class EntryText extends Component {
                         <textarea 
                           disabled={disabled}
                           maxLength={600}
-                          className={`mt-6 focus:outline-none text-lg bg-white rounded-md px-4 py-4  min-w-full border border-gray-300 font-regular h-48 ${disabled ? "bg-gray-200 text-gray-500" : ""}`} 
+                          className={`mt-6 focus:outline-none text-lg bg-black rounded-md px-4 py-4  min-w-full border border-gray-300 font-regular h-48 ${disabled ? "bg-gray-200 text-gray-500" : ""}`} 
                           onChange={onChange} 
                           value={prompt} 
                           placeholder={placeholder ? placeholder : "Enter some text to get started"}
@@ -54,7 +54,7 @@ class EntryText extends Component {
                           type="number"
                           max={10}
                           min={1}
-                          className="w-20 text-center focus:outline-none text-sm bg-white rounded-md px-2 py-1 border border-gray-300 font-regular" 
+                          className="w-20 text-center focus:outline-none text-sm bg-black rounded-md px-2 py-1 border border-gray-300 font-regular" 
                           value={promptNumber} 
                           onChange={onChangePromptNumber} 
                         />

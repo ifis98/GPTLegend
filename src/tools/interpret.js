@@ -17,8 +17,8 @@ const obj = {
 	// tags: [],
 	permissions: ['user'],
 	
-	fromColor: "gray-800",
-	toColor: "gray-600",
+	fromColor: "blue-800",
+	toColor: "white",
 
 	to: "/ai/code/interpret",
 	api: "/ai/code/interpret",
