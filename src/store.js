@@ -15,7 +15,6 @@ const httpsAgent = new https.Agent({ rejectUnauthorized: false })
 let filterBadWords = new Filter()
 
 let baseURL = config.baseURL
-console.log('base URL: '+baseURL)
 
 configure({  enforceActions: "never", })
 
@@ -43,7 +42,8 @@ class appStore {
 	constructor(){
 		makeObservable(this);
 		this.init()
-		console.log("api: "+this.api)
+		console.log('base URL: '+baseURL)
+		//console.log("api: "+this.api)
 		// Check credits every time, and log out people who aren't authenticated
 		this.api.interceptors.response.use((response) => {
 			this.updateCredits(response)
