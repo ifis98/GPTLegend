@@ -1,3 +1,4 @@
+import { fontSize } from "../../node_modules/tailwindcss/lib/plugins/index";
 
 function Header({ title, category, desc, Icon, options, currentOption, fromColor, children }){ return (
 <div className="bg-black md:px-8 pt-4 mb-px">
@@ -7,13 +8,13 @@ function Header({ title, category, desc, Icon, options, currentOption, fromColor
             <Icon className="h-16 w-16 mb-4 mt-4" />
         </div> : null}
         <div>
-            <div className={`text-sm font-medium text-${fromColor ? fromColor : "green-500"} -mb-1`}>
+            <div className={`text-sm font-medium text-${fromColor ? fromColor : "green-500"} `}>
                 {category}
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl text-white flex align-center -mb-1">
+            <h2 className="font-bold text-white flex align-center mt-1" style={{fontSize: "20px"}}>
                 {title}
             </h2> 
-            <p className="text-base text-gray-300 text-sm md:text-md lg:text-lg md:mt-2  lg:mx-0 ">
+            <p className="text-sm text-gray-300 text-sm  lg:mx-0 ">
                 {desc}
             </p>
         </div>
@@ -33,9 +34,9 @@ function Header({ title, category, desc, Icon, options, currentOption, fromColor
 export function Option({ title, Icon, onClick, currentOption, color}){
     let active = currentOption === title;
     return(
-    <div className={`lg:py-4 lg:px-8 py-3 px-6 flex transition text-${active ? `${color ? color : "green"}-200` : "gray-500"} font-medium  -mb-px rounded-t-lg  bg-${active ? `${color ? color : "green"}-800` : "gray-800"} hover:bg-${active  ? `${color ? color : "green"}-700` : "gray-100"} cursor-pointer `} onClick={()=>onClick(title)}>
-                    <div className={`md:mr-4  transition flex-shrink-0 inline-flex items-center justify-center text-sm h-6 w-6 rounded-full bg-${active ? "gray": `${color ? color : "green"}`}-200 text-${active ? `${color ? color : "green"}` : "gray"}-600`}>
-                        <Icon className={`h-4 w-4 text-${active ? `${color ? color : "green"}` : "gray"}-400`} aria-hidden="true" />
+    <div className={`lg:py-4 lg:px-8 py-3 px-6 flex transition text-${active ? "white" : `${color ? color : "green"}-600` } font-medium  -mb-px rounded-t-lg  bg-${active ? "gray-800" : `${color ? color : "green"}-200`} hover:bg-${active  ? "gray-600" : `${color ? color : "green"}-300` } cursor-pointer `} onClick={()=>onClick(title)}>
+                    <div className={`md:mr-4  transition flex-shrink-0 inline-flex items-center justify-center text-sm h-6 w-6 rounded-full bg-${active ? "gray-500": `${color ? color : "green"}-400`} text-${active ? "white":`${color ? color : "green"}`}-600`}>
+                        <Icon className={`h-4 w-4 text-${active ? "white":`${color ? color : "green"}-600`}`} aria-hidden="true" />
                     </div>
                     <div className="hidden md:block">{title}</div>
             </div>

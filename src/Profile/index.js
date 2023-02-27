@@ -46,18 +46,18 @@ class Body extends Component {
 
 	@computed get fromColor(){
 		if(this.props.store.profile.status === "trialing"){
-			return "gray-400"
+			return "blue-500"
 		}
 		if(this.props.store.profile.status === "active"){
 			if(this.props.store.profile.cancel_at_period_end){
-				return "yellow-500"
+				return "blue-500"
 			}
-			return "green-500"
+			return "blue-500"
 		}
 		if(this.props.store.profile.status === "incomplete"){
-			return "yellow-600"
+			return "blue-500"
 		}
-		return "red-500"
+		return "blue-500"
 	}
 
 	@computed get currentPeriodEnd(){
@@ -105,7 +105,7 @@ class Body extends Component {
 				Icon={UserCircleIcon}
 				fromColor={this.fromColor}
 				options={
-					this.props.location.pathname !== "/my-profile" ? [{ title: "Back to Profile", Icon: ChevronLeftIcon, onClick: this.onBack }] : null
+					this.props.location.pathname !== "/my-profile" ? [{ title: "Back to Profile", Icon: ChevronLeftIcon, onClick: this.onBack, color:"gray" }] : null
 				}
 			>
 					<Route exact path="/my-profile">
@@ -143,8 +143,8 @@ class Body extends Component {
 								title={"Feedback"} 
 								desc={"Provide comments on your experience"} 
 								to={"/my-profile/feedback"}
-								fromColor="gray-400"
-								toColor="gray-400"
+								fromColor="pink-500"
+								toColor="blue-500"
 							/>
 
 							<Tool
@@ -152,8 +152,8 @@ class Body extends Component {
 								title={"Edit Profile"} 
 								desc={"Edit your profile"} 
 								to={"/my-profile/editprofile"}
-								fromColor="gray-400"
-								toColor="gray-400"
+								fromColor="pink-500"
+								toColor="blue-500"
 							/>
 
 							
@@ -163,8 +163,8 @@ class Body extends Component {
 								title={"Log Out"} 
 								desc={"Sign out of your account"} 
 								onClick={this.props.store.handleLogout}
-								fromColor="gray-400"
-								toColor="gray-400"
+								fromColor="pink-500"
+								toColor="blue-500"
 							/>
 						</Grid>
 					</Route>
@@ -186,13 +186,13 @@ const Grid = ({ children }) => <div className="grid grid-cols-1 gap-8 mt-4 lg:gr
 const ToolDiv = ({ Icon, title, desc, to, group, fromColor, toColor, onClick }) => <><div className="flex relative " onClick={onClick}>
 	<div className={`absolute inset-0 bg-gradient-to-r from-${fromColor ? fromColor : "green-400"} to-${toColor ? toColor : "blue-500"} shadow-lg transform skew-y-0 -rotate-3 rounded-3xl `}></div>
 
-	<div className={`flex-1 bg-white rounded-xl transition hover:shadow-md overflow-hidden md:max-w-1lg text-gray-500 cursor-pointer border-t-2 border- hover:border-${fromColor ? fromColor : "blue-400"} md:flex relative transform hover:scale-105  hover:text-black`}>
-  {Icon && <div className={`md:flex-shrink-0 flex justify-start items-center ml-8 text-${fromColor ? fromColor : "green-500"}`}>
+	<div className={`flex-1 bg-black rounded-xl transition hover:shadow-md overflow-hidden md:max-w-1lg text-gray-200 cursor-pointer border-t-2 border-blue-500 hover:border-${fromColor ? fromColor : "blue-400"} md:flex relative transform hover:scale-105  hover:text-gray-300`}>
+  {Icon && <div className={`md:flex-shrink-0 flex justify-start items-center ml-8 text-white`}>
 	<Icon className="h-16 w-16 mb-4 mt-4" />
   </div>}
   <div className="p-4">
 	<div className={`uppercase tracking-wide text-sm text-${fromColor ? fromColor : "green-500"} font-semibold leading-none`}>{group || ""}</div>
-	<div href="#" className="block text-lg xl:text-xl 2xl:text-2xl leading-tight font-medium text-black leading-none">{title}</div>
+	<div href="#" className="block text-lg xl:text-xl 2xl:text-2xl leading-tight font-medium text-white leading-none">{title}</div>
 	<p className="mt-1 pr-1 text-sm ">{desc} </p>
   </div>
 </div>
@@ -203,7 +203,7 @@ const ToolForm = ({ Icon, title, desc, to, group, fromColor, toColor, onClick, a
 	<button type="submit" className="flex-1 text-left">
 	<div className={`absolute inset-0 bg-gradient-to-r from-${fromColor ? fromColor : "green-400"} to-${toColor ? toColor : "blue-500"} shadow-lg transform skew-y-0 -rotate-3 rounded-3xl `}></div>
 
-	<div type="submit" className={`flex-1 bg-white rounded-xl transition hover:shadow-md overflow-hidden md:max-w-1lg text-gray-500 cursor-pointer border-t-2 border- hover:border-${fromColor ? fromColor : "blue-400"} md:flex relative transform hover:scale-105  hover:text-black`}>
+	<div type="submit" className={`flex-1 bg-white rounded-xl transition hover:shadow-md overflow-hidden md:max-w-1lg text-gray-500 cursor-pointer border-t-2 border- hover:border-${fromColor ? fromColor : "blue-400"} md:flex relative transform hover:scale-105  hover:text-gray-300`}>
   {Icon && <div className={`md:flex-shrink-0 flex justify-start items-center ml-8 text-${fromColor ? fromColor : "green-500"}`}>
 	<Icon className="h-16 w-16 mb-4 mt-4" />
   </div>}
@@ -220,13 +220,13 @@ const Tool = ({ Icon, title, desc, to, group, fromColor, toColor, onClick, api }
 	<div  className="flex-1 text-left">
 	<div className={`absolute inset-0 bg-gradient-to-r from-${fromColor ? fromColor : "green-400"} to-${toColor ? toColor : "blue-500"} shadow-lg transform skew-y-0 -rotate-3 rounded-3xl `}></div>
 
-	<div  className={`flex-1 bg-white rounded-xl transition hover:shadow-md overflow-hidden md:max-w-1lg text-gray-500 cursor-pointer border-t-2 border- hover:border-${fromColor ? fromColor : "blue-400"} md:flex relative transform hover:scale-105  hover:text-black`}>
-  {Icon && <div className={`md:flex-shrink-0 flex justify-start items-center ml-8 text-${fromColor ? fromColor : "green-500"}`}>
+	<div  className={`flex-1 bg-black rounded-xl transition hover:shadow-md overflow-hidden md:max-w-1lg text-gray-200 cursor-pointer border-t-2 border-blue-500 hover:border-${fromColor ? fromColor : "blue-400"} md:flex relative transform hover:scale-105  hover:text-gray-300`}>
+  {Icon && <div className={`md:flex-shrink-0 flex justify-start items-center ml-8 text-white`}>
 	<Icon className="h-16 w-16 mb-4 mt-4" />
   </div>}
   <div className="p-4">
 	<div className={`uppercase tracking-wide text-sm text-${fromColor ? fromColor : "green-500"} font-semibold leading-none`}>{group || ""}</div>
-	<div className="block text-lg xl:text-xl 2xl:text-2xl leading-tight font-medium text-black leading-none">{title}</div>
+	<div className="block text-lg xl:text-xl 2xl:text-2xl leading-tight font-medium text-white leading-none">{title}</div>
 	<p className="mt-1 pr-1 text-sm ">{desc} </p>
   </div>
 </div>

@@ -9,8 +9,8 @@ const dev = {
 };
   
 const prod = {
-	baseURL: '/api/',
-	landingPageUrl: "https://app.openaitemplate.com",
+	baseURL: 'http://13.58.242.248:3080/api/',
+	landingPageUrl: "https://ifis98.github.io/",
 	stripe: {
 		free: "price_1JcQsUHIZYvvnKlaEPy958NF",
 		entry: "price_1JLpWpHIZYvvnKlaHxiCr7Js",

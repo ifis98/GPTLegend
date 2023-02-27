@@ -2,6 +2,7 @@
   "name": "openai-template",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://ifis98.github.io/GPTLegend",
   "dependencies": {
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.3",
@@ -22,6 +23,7 @@
     "express": "^4.17.1",
     "express-rate-limit": "^5.3.0",
     "fuzzyset": "^1.0.6",
+    "gh-pages": "^5.0.0",
     "jsonwebtoken": "^8.5.1",
     "lowlight": "1.20.0",
     "mobx": "^6.3.2",
@@ -50,6 +52,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-app-rewired start",
     "react": "react-app-rewired start",
     "build": "react-app-rewired build",
