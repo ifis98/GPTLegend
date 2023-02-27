@@ -15,6 +15,7 @@ const httpsAgent = new https.Agent({ rejectUnauthorized: false })
 let filterBadWords = new Filter()
 
 let baseURL = config.baseURL
+console.log('base URL: '+baseURL)
 
 configure({  enforceActions: "never", })
 
