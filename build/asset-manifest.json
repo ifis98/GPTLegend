@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/GPTLegend/static/css/main.29e71bd5.css",
-    "main.js": "/GPTLegend/static/js/main.f4338b93.js",
-    "main.js.map": "/GPTLegend/static/js/main.f4338b93.js.map",
+    "main.js": "/GPTLegend/static/js/main.90ccfd4a.js",
+    "main.js.map": "/GPTLegend/static/js/main.90ccfd4a.js.map",
     "static/js/1.15f5ef8e.chunk.js": "/GPTLegend/static/js/1.15f5ef8e.chunk.js",
     "static/js/1.15f5ef8e.chunk.js.map": "/GPTLegend/static/js/1.15f5ef8e.chunk.js.map",
     "index.html": "/GPTLegend/index.html",
     "static/css/main.29e71bd5.css.map": "/GPTLegend/static/css/main.29e71bd5.css.map",
-    "static/js/main.f4338b93.js.LICENSE.txt": "/GPTLegend/static/js/main.f4338b93.js.LICENSE.txt",
+    "static/js/main.90ccfd4a.js.LICENSE.txt": "/GPTLegend/static/js/main.90ccfd4a.js.LICENSE.txt",
     "static/media/pattern-dots.svg": "/GPTLegend/static/media/pattern-dots.0a312038.svg"
   },
   "entrypoints": [
     "static/css/main.29e71bd5.css",
-    "static/js/main.f4338b93.js"
+    "static/js/main.90ccfd4a.js"
   ]
 }

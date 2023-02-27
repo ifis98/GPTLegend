@@ -9,6 +9,7 @@ require('./routes/middlewares/mongo');
 
 const app = express()
 const port = 3080
+const https = require("https");
 
 app.use(morgan('dev'))
 app.use(cors())
@@ -30,6 +31,20 @@ app.use('/api', require('./routes/api'))
 app.use(express.static(__dirname + '/build'));
 // Send all other items to index file
 app.get('*', (req, res) => res.sendFile(__dirname + '/build/index.html'));
+
+https
+  .createServer(
+    {
+      key: fs.readFileSync("server.key"),
+      cert: fs.readFileSync("server.cert"),
+    },
+    app
+  )
+  .listen(port, function () {
+    console.log(
+      "Example app listening on port 3080!"
+    );
+  });
 
 app.listen(port, () => {
   console.log(`Example app listening at ${process.env.DOMAIN}:${port}`)
