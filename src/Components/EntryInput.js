@@ -84,7 +84,6 @@ class EntryInput extends Component {
 				{this.props.prompt.options ? null : <div className={`text-xs absolute z-30 right-2 select-none pointer-events-none transition-all top bg-black px-2 ${this.isMinLength ? "text-red-500" : "text-gray-400"} ${(!this.isLongEnoughToDrop && this.props.size) ? "" : ""}`}>
 					{this.currentNumberOfCharacters} chars
 				</div>}
-title
 				
 				<label htmlFor={this.props.prompt.attr} className="relative transition text-gray-600 focus-within:text-gray-800 block">
 				{Icon ? <Icon className={`

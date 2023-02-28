@@ -424,6 +424,33 @@ class Tool extends Component {
                                     outputsColor={this.tool.output.color}
                                     OutputsIcon={this.tool.output.Icon}
                             /> 
+                            {
+                            this.output ? 
+                            <EntryInput
+                                    prompt={{
+                                        title: "Tweak Output",
+                                        attr: "tweak",
+                                        name: "",
+                                        value: "",
+                                        placeholder: "Write a message...",
+                                        type: "textarea"
+                                    }}
+                            /> : null
+                            }
+                            {
+                            this.output ? 
+                            <Countdown 
+                            ref={countdown => this.countdown[12] = countdown} 
+                            date={this.date} 
+                            renderer={props => 
+                            <Button 
+                                title={props.total ? `Timeout ${props.total/1000} secs` : "Perform Request"}
+                                disabled={props.total || this.isGenerateButtonDisabled}
+                                Icon={props.total ? ClockIcon : currentValue ? DuplicateIcon : PencilIcon} 
+                                onClick={this.onGenerateClick} 
+                            />} 
+                        /> : null
+                            }
                         </Col> 
                     </Grid> 
                 </Body>
