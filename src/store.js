@@ -18,7 +18,7 @@ let baseURL = config.baseURL
 
 configure({  enforceActions: "never", })
 
-let api = axios.create({ baseURL, httpsAgent});
+let api = axios.create({ baseURL,});
 
 const FuzzySearch = FuzzySet([...TOOLS.map(tool => tool.title)]);
 
