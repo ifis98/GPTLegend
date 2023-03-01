@@ -80,6 +80,7 @@ app.post('/writing/email', async (req, res, next) => {
 
 	} catch (err) {
 		console.log(err)
+		console.log(await openai.engines())
 	}
   })
 
