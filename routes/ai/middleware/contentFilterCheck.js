@@ -29,6 +29,7 @@ const contentFilterCheck = async (req, res, next) => {
 		const gptResponse = await openai.createCompletion({
 			engine: 'content-filter-alpha-c4',
 			prompt: content,
+			/*
 			maxTokens: 1,
 			temperature: 0,
 			topP: 0,
@@ -37,6 +38,7 @@ const contentFilterCheck = async (req, res, next) => {
 			frequencyPenalty: 0,
 			presencePenalty: 0,
 			stream: false,
+			*/
 		});
 
 		if(gptResponse.data.choices[0].text == "2"){
