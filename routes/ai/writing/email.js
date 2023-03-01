@@ -37,7 +37,8 @@ app.post('/writing/email', async (req, res, next) => {
 
 
 		const gptResponse = await openai.complete({
-			engine: 'text-davinci-003',
+			engine: 'chat',
+			model: 'gpt-3.5-turbo',
 			prompt,
 			maxTokens: 500,
 			temperature: 0.8,
