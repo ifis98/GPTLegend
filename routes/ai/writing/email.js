@@ -53,7 +53,7 @@ app.post('/writing/email', async (req, res, next) => {
 			*/
 		});
 
-		console.log("output: "+gptResponse.data.choices[0].messages[0])
+		console.log("output: "+gptResponse.data.choices[0])
 
 		let output = `${gptResponse.data.choices[0].text}`
 		//console.log("output: "+output)
