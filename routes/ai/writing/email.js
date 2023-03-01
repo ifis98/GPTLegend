@@ -36,7 +36,7 @@ app.post('/writing/email', async (req, res, next) => {
 		prompt += inputRaw
 
 
-		const gptResponse = await openai.ChatCompletion.create({
+		const gptResponse = await openai.createChatCompletion({
 			model: 'gpt-3.5-turbo',
 			messages:[{role:"user",content:prompt}],
 			maxTokens: 500,
