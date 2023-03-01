@@ -39,6 +39,7 @@ app.post('/writing/email', async (req, res, next) => {
 		const gptResponse = await openai.createChatCompletion({
 			model: 'gpt-3.5-turbo',
 			messages:[{role:"user",content:prompt}],
+			/*
 			maxTokens: 500,
 			temperature: 0.8,
 			frequencyPenalty: 0.2,
@@ -49,6 +50,7 @@ app.post('/writing/email', async (req, res, next) => {
 			user: req.user._id,
 			stream: false,
 			stop: [`"""`, "Title:","Audience:", "Introduction:" ],
+			*/
 		});
 
 
