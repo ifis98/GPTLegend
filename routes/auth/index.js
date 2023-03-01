@@ -97,6 +97,7 @@ const signup = async (req, res) => {
   
 	user.save((err, user) => {
 	  if (err) {
+		console.log(error)
 		res.status(500).json({ message: err });
 		return;
 	  }
