@@ -36,7 +36,7 @@ app.post('/writing/email', async (req, res, next) => {
 		prompt += inputRaw
 
 
-		const gptResponse = await openai.createCompletion({
+		const gptResponse = await openai.complete({
 			engine: 'gpt-3.5-turbo',
 			prompt,
 			maxTokens: 500,
