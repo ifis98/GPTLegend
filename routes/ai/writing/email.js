@@ -53,9 +53,9 @@ app.post('/writing/email', async (req, res, next) => {
 			*/
 		});
 
-		console.log("output: "+gptResponse.data.choices[0].message)
+		//console.log("output: "+gptResponse.data.choices[0].message)
 
-		let output = `${gptResponse.data.choices[0].text}`
+		let output = `${gptResponse.data.choices[0].message.content}`
 		//console.log("output: "+output)
 		// remove the first character from output
 		output = output.substring(1, output.length)
