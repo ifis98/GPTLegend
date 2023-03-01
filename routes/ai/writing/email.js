@@ -1,7 +1,7 @@
 
 const express = require('express');
 const openai = require('../../middlewares/openai');
-
+const axios = require('axios');
 let app = express.Router()
 
 // input tokens: 150
@@ -36,10 +36,9 @@ app.post('/writing/email', async (req, res, next) => {
 		prompt += inputRaw
 
 
-		const gptResponse = await openai.complete({
-			engine: 'chat',
+		const gptResponse = await openai.ChatCompletion.create({
 			model: 'gpt-3.5-turbo',
-			prompt,
+			messages:[{role:"user",content:prompt}],
 			maxTokens: 500,
 			temperature: 0.8,
 			frequencyPenalty: 0.2,
@@ -51,6 +50,7 @@ app.post('/writing/email', async (req, res, next) => {
 			stream: false,
 			stop: [`"""`, "Title:","Audience:", "Introduction:" ],
 		});
+
 
 		let output = `${gptResponse.data.choices[0].text}`
 
@@ -80,7 +80,6 @@ app.post('/writing/email', async (req, res, next) => {
 
 	} catch (err) {
 		console.log(err)
-		console.log(await openai.engines())
 	}
   })
 
