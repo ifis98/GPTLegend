@@ -30,7 +30,7 @@ app.post('/business/jobad', async (req, res, next) => {
 
 	  inputRaw = `${title ? `TITLE: ${title}\n` : ``}`+
 	  `${salary ? `SALARY: ${salary}\n` : ``}`+
-	  `${skills ? `SKILLS: ${skills}\n` : ``}`
+	  `${skills ? `SKILLS: ${skills}\n` : ``}`+
 	  `${company ? `COMPANY NAME: ${company}\n` : ``}`+
 	  `${contact ? `METHODS OF CONTACT: ${contact}\n` : ``}`+
 	  `${companyDescription ? `COMPANY DESCRIPTION: ${companyDescription}\n` : ``}`+
