@@ -20,9 +20,10 @@ const contentFilterCheck = async (req, res, next) => {
 	}
 
 	if(content !== ""){
+		console.log("Received content: "+content)
 		// add Hello at the start of the content string
 		content = `<|endoftext|>${content}`
-
+		console.log("Received content: "+content)
 		// Add label to end end of the content string
 		content += `\n--\nLabel:`
 
