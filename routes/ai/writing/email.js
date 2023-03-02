@@ -58,7 +58,7 @@ app.post('/writing/email', async (req, res, next) => {
 		let output = `${gptResponse.data.choices[0].message.content}`
 		console.log("output: "+output)
 		// remove the first character from output
-		output = output.substring(1, output.length)
+		output = output.substring(0, output.length)
 
 		// If the output string ends with one or more hashtags, remove all of them
 		if (output.endsWith('"')) {
