@@ -63,7 +63,7 @@ app.post('/business/jobad', async (req, res, next) => {
 		model: 'gpt-3.5-turbo',
 		messages:[{role:"user",content:prompt}],
 		stop: ["<|endoftext|>","JOB AD","TEXT", "COMPANY NAME" ],
-		temperature: 0.1,
+		temperature: 0.8,
 		/*
 		maxTokens: 500,
 		temperature: 0.8,
