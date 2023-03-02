@@ -40,6 +40,8 @@ const contentFilterCheck = async (req, res, next) => {
 			stream: false,
 			*/
 		});
+
+		
 		/*
 		if(gptResponse.data.choices[0].text == "2"){
 			// console.log(`Unsafe content`, gptResponse.data.choices[0].text, content)
@@ -50,7 +52,7 @@ const contentFilterCheck = async (req, res, next) => {
 
 			//   # If both "0" and "1" have probabilities, set the output label
 			// # to whichever is most probable
-
+			
 			
 			if (response["choices"][0]["logprobs"]["top_logprobs"][0]["2"] < toxic_threshold) {
 				let logprob_0 = response["choices"][0]["logprobs"]["top_logprobs"][0]
@@ -70,19 +72,22 @@ const contentFilterCheck = async (req, res, next) => {
 					output_label = "1";
 				}
 			}
-			*/
-
-			if(gptResponse.flagged){
-				res.json({
-					success: false,
-					error: "Unsafe content",
-					message: "Unsafe content , please try different language"
-				})
-				return
-			} else {
-				next()
-			}
 			
+			
+
+			
+			
+		} else {
+			next()
+		}
+		*/
+		if(gptResponse.flagged){
+			res.json({
+				success: false,
+				error: "Unsafe content",
+				message: "Unsafe content , please try different language"
+			})
+			return
 		} else {
 			next()
 		}
