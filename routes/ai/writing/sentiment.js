@@ -21,7 +21,7 @@ app.post('/writing/sentiment', async (req, res, next) => {
 		
 
 		let inputRaw =
-		`${text ? `TEXT: ${text}\n` : ``}` + +  
+		`${text ? `TEXT: ${text}\n` : ``}` +   
 		`SENTIMENT:` 
 
 

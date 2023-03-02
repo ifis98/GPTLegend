@@ -28,7 +28,14 @@ app.post('/business/jobad', async (req, res, next) => {
 	if(currentPrompt === "Detailed Ad"){
 		prompt = `As a recruiter, create a detailed Job Ad from the following details:\n###` 
 
-	  inputRaw = `TITLE: ${title}\nSALARY: ${salary}\nSKILLS: ${skills}\nCOMPANY NAME: ${company}\nCONTACT: ${contact}\n COMPANY DESCRIPTION:${companyDescription} JOB AD:`
+	  inputRaw = `${title ? `TITLE: ${title}\n` : ``}`+
+	  `${salary ? `SALARY: ${salary}\n` : ``}`+
+	  `${skills ? `SKILLS: ${text}\n` : ``}`
+	  `${company ? `COMPANY NAME: ${company}\n` : ``}`+
+	  `${contact ? `METHODS OF CONTACT: ${contact}\n` : ``}`+
+	  `${companyDescription ? `COMPANY DESCRIPTION: ${companyDescription}\n` : ``}`+
+	  `JOB AD:`
+	  
 	  prompt += inputRaw
 	}
   
