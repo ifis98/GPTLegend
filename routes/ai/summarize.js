@@ -18,7 +18,7 @@ app.post('/personal/summarize', async (req, res, next) => {
 
 	let inputRaw = `TEXT: ${content}\nKEY POINTS: 1.`
 	prompt += inputRaw
-
+	
 	const gptResponse = await openai.complete({
 		engine: 'text-davinci-003',
 		prompt,
