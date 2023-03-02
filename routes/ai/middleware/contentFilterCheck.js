@@ -26,9 +26,9 @@ const contentFilterCheck = async (req, res, next) => {
 		// Add label to end end of the content string
 		content += `\n--\nLabel:`
 
-		const gptResponse = await openai.createCompletion({
-			engine: 'content-filter-alpha-c4',
-			prompt: content,
+		const gptResponse = await openai.createModeration({
+			model: 'text-moderation-latest',
+			input: content,
 			/*
 			maxTokens: 1,
 			temperature: 0,
@@ -51,7 +51,7 @@ const contentFilterCheck = async (req, res, next) => {
 			//   # If both "0" and "1" have probabilities, set the output label
 			// # to whichever is most probable
 
-
+			/*
 			if (response["choices"][0]["logprobs"]["top_logprobs"][0]["2"] < toxic_threshold) {
 				let logprob_0 = response["choices"][0]["logprobs"]["top_logprobs"][0]
 				let logprob_1 = response["choices"][0]["logprobs"]["top_logprobs"][1]
@@ -70,8 +70,9 @@ const contentFilterCheck = async (req, res, next) => {
 					output_label = "1";
 				}
 			}
+			*/
 
-			if(output_label !== "0" || output_label !== "1"){
+			if(gptResponse.flagged){
 				res.json({
 					success: false,
 					error: "Unsafe content",
