@@ -39,13 +39,14 @@ app.listen(port, () => {
 })
 
 
-/*
+
 
 https
   .createServer(
     {
-      key: fs.readFileSync("server.key"),
-      cert: fs.readFileSync("server.cert"),
+      ca: fs.readFileSync("ca_bundle.crt"),
+      key: fs.readFileSync("private.key"),
+      cert: fs.readFileSync("certificate.crt")
     },
     app
   )
@@ -55,4 +56,3 @@ https
     );
   });
   
-*/
