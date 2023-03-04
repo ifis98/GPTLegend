@@ -33,12 +33,13 @@ app.use(express.static(__dirname + '/build'));
 // Send all other items to index file
 app.get('*', (req, res) => res.sendFile(__dirname + '/build/index.html'));
 
-/*
+
 app.listen(port, () => {
   console.log(`Example app listening at ${process.env.DOMAIN}:${port}`)
 })
-*/
 
+
+/*
 
 https
   .createServer(
@@ -54,3 +55,4 @@ https
     );
   });
   
+*/
