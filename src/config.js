@@ -9,7 +9,7 @@ const dev = {
 };
   
 const prod = {
-	baseURL: 'http://13.58.242.248:3080/api/',
+	baseURL: 'https://13.58.242.248:3080/api/',
 	landingPageUrl: "https://ifis98.github.io/",
 	stripe: {
 		free: "price_1JcQsUHIZYvvnKlaEPy958NF",
