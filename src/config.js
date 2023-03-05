@@ -9,7 +9,7 @@ const dev = {
 };
   
 const prod = {
-	baseURL: 'https://3.128.101.211:3080/api/',
+	baseURL: 'https://node.smqrter.com:3080/api/',
 	landingPageUrl: "https://ifis98.github.io/",
 	stripe: {
 		free: "price_1JcQsUHIZYvvnKlaEPy958NF",
